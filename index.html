@@ -1,0 +1,27 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <script src="./script.js"></script>
+      <style></style> 
+    </head>
+    <body>
+     <div id="mainDiv"></div>   
+     
+     <script>
+    let data  = getProducts(); 
+
+    
+    localStorage.setItem("productList",JSON.stringify(data)); // JSON.stringfy() convert js object into string
+
+    let isUserListExist = localStorage.getItem("userList"); //False
+    (!isUserListExist) && localStorage.setItem("userList","[]");
+
+      CreateHeader();
+      createcart(data.products);
+      
+      (!localStorage.getItem("cartList")) && localStorage.setItem("cartList","[]");
+     
+      
+     </script>
+    </body>
+</html>
